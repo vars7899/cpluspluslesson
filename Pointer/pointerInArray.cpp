@@ -60,4 +60,6 @@ int main(){
     // should return 3rd element --> 4
     cout<<*ptr<<endl;
 
+    // @
+
 }

@@ -34,7 +34,7 @@ bool isPrime(int k){
 //     int counter=0;
 //     while(index<n){
 //         if(isPrime(index)){
-//             counter++;
+//             counter++;git
 //         }
 //         index++;
 //     }
@@ -54,6 +54,10 @@ int countPrimes(int n){
     // 0 and 1 are not prime
     primeList[0]=false;
     primeList[1]=false;
+    // optimisation
+    // instead of checking i<n
+    // use i*i<n as anything that is multiple of i will be multiple of i*i
+    // so we do not have to check non prime number
     for(int i=2;i<n;i++){
         if(primeList[i]){
             count++;
@@ -62,7 +66,11 @@ int countPrimes(int n){
             // we will start from 2nd row of table
             // keep incrementing by adding j to i
             // to get next number in the table
-            for(int j=i*2;j<n;j=j+i){
+            // more optimisation
+            // instead of stating our loop 2*i
+            // we can start at i*i as there will
+            // be a number(i-1)
+            for(long long int j=(i*i);j<n;j=j+i){
                 primeList[j] = false;
             }
         }
@@ -72,9 +80,7 @@ int countPrimes(int n){
 
 int main(){
     // basic function to check if a number is prime or not
-    isPrime(1)?cout<<"Prime"<<endl:cout<<"NOT Prime"<<endl;
-    cout<<countPrimes(5000000);
-
-
-    return 1;
+    // isPrime(1)?cout<<"Prime"<<endl:cout<<"NOT Prime"<<endl;
+    cout<<countPrimes(5000);
+    return 0;
 }
