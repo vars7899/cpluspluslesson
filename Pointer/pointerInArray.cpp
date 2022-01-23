@@ -60,6 +60,22 @@ int main(){
     // should return 3rd element --> 4
     cout<<*ptr<<endl;
 
-    // @
+    // @ pointers in the character arrays
+    char ch[6] = "hello"; // ? 6 is the size as 5 elements + null last element
 
+    cout<<ch<<endl; 
+    // ! incase of int array we use to get the memory address of the first element but here we we get the whole string
+    char *c1 = &ch[0];
+    cout<<c1<<endl;
+    // * the above line will again print the whole string
+    // ? this is due to the fact the implementation of the cout is different than the cout implementation in the int
+    // ? the cout in the char will continue to print until it found the null character
+    char temp = 'f';
+    char *temp_p = &temp;
+    cout<<temp_p<<endl;
+
+    // ! this is the right way to pass char in pointer
+    char s[]= "hello";
+    char *p = s;
+    cout << p << " " << p[0];
 }
