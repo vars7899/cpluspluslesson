@@ -2,6 +2,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// void update1(int **p){
+//     p = p + 1; //nothing will change here
+//     // ? as here we are creating a new local variable named as p which is a copy of p 
+// }
+// void update2(int **p){
+//     *p = *p + 1; //nothing will change here
+//     // ? here we are just going to do pointer airthemetic that will increase the mem address by 4 bytes(as it is INT)
+// }
+void update3(int **p){
+    **p = **p + 1; //this will lead to value change
+    // ? as we are pointing to change the value pointing to another pointer that will point to the value.
+}
 int main(){
     // ? The following is the way to create double pointer
     int val = 1010;  //* variable
@@ -41,7 +53,15 @@ int main(){
     int *p1 = &i;
     int **p2 = &p1;
     // ? there are three ways to get the content inside p1 mem block
-    cout<<&i<<"\t"<<p1<<"\t"<<*p2;
-
+    cout<<&i<<"\t"<<p1<<"\t"<<*p2<<endl;
+    // cout<<"Before : "<<i<<" "<<p1<<" "<<p2<<endl;
+    // update1(p2);
+    // cout<<"After : "<<i<<" "<<p1<<" "<<p2<<endl;
+    // cout<<"Before : "<<i<<" "<<p1<<" "<<p2<<endl;
+    // update2(p2);
+    // cout<<"After : "<<i<<" "<<p1<<" "<<p2<<endl;
+    cout<<"Before : "<<i<<" "<<p1<<" "<<p2<<endl;
+    update3(p2);
+    cout<<"After : "<<i<<" "<<p1<<" "<<p2<<endl;
     return 0;
 }
