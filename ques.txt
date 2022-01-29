@@ -1,0 +1,4 @@
+1. What are reference variable?
+2. Why we need reference variable?
+3. what is the difference between reference variable and pointers?
+4. why passing the size of array at runtime is a bad practice?
