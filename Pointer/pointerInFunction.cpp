@@ -15,6 +15,13 @@ int getSum(int *arr, int n){ // @ we can write arr[] or *arr is same
     }
     return res;
 }
+// ? we can return a pointer from function, the following is the syntax used to return pointer from a function (BAD PRACTICE)
+// ! we are passing a variable of local scope to main function
+int* func(int n){
+    int *ptr = &n;
+    (ptr)++;
+    return ptr;
+}
 int main(){
     int val = 80;
     int *ptr = &val;
@@ -25,4 +32,6 @@ int main(){
     cout<<getSum(arr,7)<<endl;
     // ? the benefit here is we can send partial array
     cout<<getSum(arr+2,5)<<endl; 
+    int *x = func(val);
+    cout<<*x<<endl;
 }
