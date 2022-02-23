@@ -61,9 +61,10 @@ int main(){
     Hero h;
     cout<<h.timeToComplete<<endl; // bad practice as static member are for class not for object 
     Hero h2;
+    
     h2.timeToComplete = 2022;
     cout<<h2.timeToComplete<<endl;
+
     cout<<Hero::timeToComplete<<endl;
     cout<<Hero::time()<<endl;
-    
 }
