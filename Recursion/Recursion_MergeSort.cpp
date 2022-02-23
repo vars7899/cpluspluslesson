@@ -8,7 +8,7 @@ void print(vector<int> a){
         cout<<item<<" ";
     }cout<<" ]"<<endl;
 }
-// @ UTILITY
+
 
 void merge(vector<int> &nums, int start, int end){
     // calculate the mid of the array

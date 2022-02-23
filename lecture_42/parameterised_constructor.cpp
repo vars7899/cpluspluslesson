@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// ! this keyword --> it is pointer to the current object
+
 class Hero{
     private:
     bool isAdmin;
