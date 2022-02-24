@@ -28,4 +28,33 @@ of encapsulation :-
 4. We can hide the internal information using the encapsulation which is better for security reason.
 
 -----------------------------------------------------------------------------------------------
-Inheritance --> 
+Inheritance --> the process of inheriting the properties and behaviors from existing class to new class. Lets understand Inheritance using real world example lets create a class of cars which has properties like top-speed, milage, number of tyres, fuel type and behaviors like accelerate, brake, move left, move right. There are two cars one ford f350 and tesla cyber truck but both are cars so both of them same properties and methods, the both have top speed milage etc and methods like accelerate, brake etc. So, we do not have to write properties and methods again for each new car we add they can all inherit common properties from the parent class and if there is any other property we can add that to the specific class.
+
+Super class --> The class whose properties are inherited by sub class are know as super class/base class/parent class
+Sub class --> The class that inherit properties from another class is known as sub class/child class.
+
+The following is the syntax used for Inheritance
+
+class className : mode_of_inheritance parent_class{
+
+}
+
+mode of inheritance --> can be public, private or protected
+
+------------------------------------------------------------------------------
+|  Access of data member | mode of inheritance  | member access in sub class |
+------------------------------------------------------------------------------
+|       public           |       public         |           public           |
+|       public           |       private        |           private          |
+|       public           |       protected      |           protected        |
+------------------------------------------------------------------------------
+|       private          |       public         |         not accessible     |
+|       private          |       private        |         not accessible     |
+|       private          |       protected      |         not accessible     |
+------------------------------------------------------------------------------
+|       protected        |       public         |           protected        |
+|       protected        |       private        |           private          |
+|       protected        |       protected      |           protected        |
+------------------------------------------------------------------------------
+
+private data members of any class can not be inherited by any class;
