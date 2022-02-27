@@ -1,0 +1,60 @@
+Lecture 43 syllabus
+1. Encapsulation
+2. Polymorphism
+3. Inheritance
+4. Abstraction
+
+------------------------------------------------------------------------------  
+Encapsulation --> Wrapping up the data members and function members under the 
+same unit is known as encapsulation. 
+
+Q1. what is fully encapsulated class --> A class in which all the data members 
+are private and can be accessed only within the class. The following is the an 
+example of fully encapsulated class.
+
+class Hero{
+    private:
+    char name;
+    int health;
+    char level;
+    int coins;
+}
+
+Q2. What are the advantages of encapsulation? --> The following are the advantages
+of encapsulation :- 
+1. Data hiding as other classes will not be able to access the private data members.
+2. encapsulated code is better for unit testing.
+3. We can make the class read only by using encapsulation and encapsulation also make the code readability better.
+4. We can hide the internal information using the encapsulation which is better for security reason.
+
+-----------------------------------------------------------------------------------------------
+Inheritance --> the process of inheriting the properties and behaviors from existing class to new class. Lets understand Inheritance using real world example lets create a class of cars which has properties like top-speed, milage, number of tyres, fuel type and behaviors like accelerate, brake, move left, move right. There are two cars one ford f350 and tesla cyber truck but both are cars so both of them same properties and methods, the both have top speed milage etc and methods like accelerate, brake etc. So, we do not have to write properties and methods again for each new car we add they can all inherit common properties from the parent class and if there is any other property we can add that to the specific class.
+
+Super class --> The class whose properties are inherited by sub class are know as super class/base class/parent class
+Sub class --> The class that inherit properties from another class is known as sub class/child class.
+
+The following is the syntax used for Inheritance
+
+class className : mode_of_inheritance parent_class{
+
+}
+
+mode of inheritance --> can be public, private or protected
+
+------------------------------------------------------------------------------
+|  Access of data member | mode of inheritance  | member access in sub class |
+------------------------------------------------------------------------------
+|       public           |       public         |           public           |
+|       public           |       private        |           private          |
+|       public           |       protected      |           protected        |
+------------------------------------------------------------------------------
+|       private          |       public         |         not accessible     |
+|       private          |       private        |         not accessible     |
+|       private          |       protected      |         not accessible     |
+------------------------------------------------------------------------------
+|       protected        |       public         |           protected        |
+|       protected        |       private        |           private          |
+|       protected        |       protected      |           protected        |
+------------------------------------------------------------------------------
+
+private data members of any class can not be inherited by any class;
