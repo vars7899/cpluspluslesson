@@ -9,7 +9,7 @@ using namespace std;
 
 // ? Public access --> data members that can be accessed by anyone within the class or outside tha class
 // ? Private access members --> data members that can be accessed only within the class
-// ? Protected access members -->
+// ? Protected access members --> data members that can be accessed within the class and by child class/derived class.
 
 // user defined data type --> class
 class Avatar{
