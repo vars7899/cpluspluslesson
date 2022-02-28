@@ -58,3 +58,27 @@ mode of inheritance --> can be public, private or protected
 ------------------------------------------------------------------------------
 
 private data members of any class can not be inherited by any class;
+
+There are five types of inheritance
+1. single inheritance --> one class can extend functionality to another class. There is only one parent and one child relation.
+
+2. multi-level inheritance --> When a class is derived from a parent class and this derived class becomes the parent class for a new class it is known as multi level inheritance.
+
+3. multiple inheritance --> when a child class has more than one parent or when a class is derived from more than one super class it is known as multiple inheritance.
+
+4. hierarchical inheritance --> when one class serves as a parent for more than one derived class it is known as hierarchical inheritance;
+
+5. hybrid inheritance --> combination of more than one type of inheritance
+
+XXX. Inheritance Ambiguity --> 
+
+lets assume there is a class A which has a function member named print and there is a function B which also has a function member named print, and we created a class C by using multiple inheritance from class A and class B. but now we have two function member named as print how we will be able to get the one which is inherited from class B, the answer is by using the scope resolution operator(::);
+
+----------------------------------------------------------------------------------
+Polymorphism --> Polymorphism is made up of two words poly means many ans morph means forms, so one thing that can exist in multiple forms is known as Polymorphism.
+
+for example -> humare pita ji, for his mom he is his son, for bua ji he is his brother, for my mom he is his husband, for me he is my father. same person but different title.
+
+There are two types of Polymorphism
+1. Compile-time Polymorphism;
+2. Run-time Polymorphism;

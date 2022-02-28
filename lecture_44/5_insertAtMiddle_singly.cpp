@@ -14,6 +14,7 @@ class Node{
     }
 };
 
+// The below code will not work properly for position 1 and last position
 void insertAtMiddle(Node* &head, int position, int d){
 
     Node* start = head;
