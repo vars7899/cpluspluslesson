@@ -23,6 +23,7 @@ class Node{
 
 void print(Node* n){
     Node* temp = n;
+    if(n == NULL) return;
     do{
         cout<<n->data;
         n->next == NULL ? cout<<"" : cout<<" -> ";
