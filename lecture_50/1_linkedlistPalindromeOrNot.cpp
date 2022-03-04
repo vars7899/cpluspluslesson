@@ -72,6 +72,9 @@ Node* reverse(Node* &head){
     }
     return prev;
 }
+// 3. reversing approach
+// time complexity --> O(n), where n is the number of node in the linked list
+// space complexity --> O(1), constant space.
 bool isPalindrome3(Node* head){
     // edge case
     // if the list is empty
@@ -91,7 +94,7 @@ bool isPalindrome3(Node* head){
         h1 = h1->next;
         h2 = h2->next;
     }
-    // 4. un-reverse the linked list
+    // 4. un-reverse the linked list (optional)
     mid->next = reverse(mid->next);
 
     return true;
