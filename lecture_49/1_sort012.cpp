@@ -23,12 +23,13 @@ void print(Node* n){
     cout<<endl;
 }
 
-// Sort a given linked list and sort them in 0, 1, 2.
-// for example,
-// I/P --> {1 2 2 1 0 0 2 1}
-// O/P --> {0 0 1 1 1 2 2 2}
-// The following are the approaches used to solve this problem.
-// 1. if the output does not want the change the already existing linked list, then we can simply count the number of 0, 1 and 2 in the linked list and then create a linked list counted number of 0,1 and 2.
+// . Sort a given linked list and sort them in 0, 1, 2.
+// . for example,
+// . I/P --> {1 2 2 1 0 0 2 1}
+// . O/P --> {0 0 1 1 1 2 2 2}
+// ? The following are the approaches used to solve this problem.
+// ? 1. if the output does not want the change the already existing linked list, then we can simply count the number of 0, 1 and 2 in the linked list and then create a linked list counted number of 0,1 and 2.
+// ? 2. When data replacement is not allowed,
 
 
 Node* sort_1(Node* head){
@@ -60,20 +61,60 @@ Node* sort_1(Node* head){
     }
     return head;
 } 
+// space complexity --> O(n), where n is the number of node, as we are traversing through each node in the linked list
+// time complexity --> O(1)
+Node* sort_2(Node* &head){
+    // if the list is empty or the list only has one element 
+    if(head == NULL || head->next == NULL) return head;
+    // create linked list for each 0 1 and 2
+    Node* zeroLL = new Node(0);
+    Node* oneLL = new Node(0);
+    Node* twoLL = new Node(0);
+    // pointer for I/P linked list
+    Node* current = head;
+    // pointer for each 0,1,2 linked list
+    Node* zero = zeroLL, *one = oneLL, *two = twoLL;
+    while(current != NULL){
+        if(current->data == 0){
+            zero->next = current;
+            zero = zero->next;
+        }else if(current->data == 1){
+            one->next = current;
+            one = one->next;
+        }else if(current->data == 2){
+            two->next = current;
+            two = two->next;
+        }
+        current = current->next;
+    }
 
+    zero->next = ((oneLL->next) ? (oneLL->next) : (twoLL->next));
+    one->next = twoLL->next;
+    two->next = NULL;
+    head = zeroLL->next;
+
+    // free up the heap memory
+    free(zeroLL);
+    free(oneLL);
+    free(twoLL);
+
+
+    return head;
+}
 
 int main(){
-    Node* n1 = new Node(0);
-    Node* n2 = new Node(2);
-    Node* n3 = new Node(1);
-    Node* n4 = new Node(1);
-    Node* n5 = new Node(2);
+    Node* n1 = new Node(2);
+    Node* n2 = new Node(1);
+    Node* n3 = new Node(2);
+    Node* n4 = new Node(2);
+    Node* n5 = new Node(1);
     n1->n(n2);
     n2->n(n3);
     n3->n(n4);
     n4->n(n5);
     Node* head = n1;
     print(head);
-    Node* c = sort_1(head);
+    // Node* c = sort_1(head);
+    Node* c = sort_2(head);
     print(c);
 }

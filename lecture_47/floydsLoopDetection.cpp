@@ -141,14 +141,14 @@ int main(){
     // * 1. It is circular linked list, the tail of the linked list is pointing to the head of the linked list
     // * 2. There are two node whose next property is pointing to the same node.  
     Node* n1 = new Node(1);
-    // Node* n2 = new Node(2);
-    // Node* n3 = new Node(3);
-    // Node* n4 = new Node(4);
+    Node* n2 = new Node(2);
+    Node* n3 = new Node(3);
+    Node* n4 = new Node(4);
     // Node* n5 = new Node(5);
-    n1->next = n1;
-    // n2->next = n3;
-    // n3->next = n4;
-    // n4->next = n5;
+    n1->next = n2;
+    n2->next = n3;
+    n3->next = n4;
+    n4->next = n1;
     // n5->next = n5;
     Node* head = n1;
     // cout<<isCircular(head)<<endl;
