@@ -1,0 +1,14 @@
+-------------------------------------------------------------
+Chapter -- 44 (Linked List)
+-------------------------------------------------------------
+
+1. What is a linked list?
+--> Linked list is a type of linear data structure which is a collection of nodes,
+Each node contains data field and reference to the next node.
+
+2. What are linear data structure?
+--> linear data structure has element that are connected to each other. So, that
+element are arranged in sequential manner. for example Array, the elements are connected to each other as an array is contigous block of memory, the next element lies in the next memory address.
+
+3. What are node in the linked list?
+--> In linked list the node consist of two property data field and reference/pointer/memory address to the next node. 
