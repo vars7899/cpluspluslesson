@@ -24,7 +24,7 @@ class KStack{
 
         // initially all the stacks will be empty, so there top value should be equal to -1(showing that they do not have any value in them)
         // you can use the loop or the memset
-        memset(top, -1, sizeof(top)+4);
+        memset(top, -1, sizeof(int)*this->sn);
         // for(int i=0; i<this->sn; i++){
         //     top[i] = -1;
         // }
